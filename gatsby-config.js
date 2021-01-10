@@ -21,8 +21,8 @@ module.exports = {
       twitter: "https://twitter.com/",
     },
     locale: "en",
-    title: `Lovesome`,
-    description: `Love for what`,
+    title: `For Better Days`,
+    description: `For Better Days`,
     author: `@walker`,
   },
   plugins: [
@@ -48,7 +48,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Lovesome`,
+        name: `ForBetterDays`,
         short_name: `walker`,
         start_url: `/`,
         background_color: `#ffffff`,

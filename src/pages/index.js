@@ -10,7 +10,7 @@ import SiteMetadata from "../components/SiteMetadata"
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <SiteMetadata title="Work" description="Love for what ama et fac quod vis." />
+      <SiteMetadata title="ForBetterDays" description="자기 자신에 이르는 길" />
 
       <Hero />
 
@@ -18,8 +18,8 @@ const IndexPage = ({ data }) => {
         {data.portfolio && data.portfolio.nodes.length > 0 ? (
           <Cards items={data.portfolio.nodes} />
         ) : (
-          <div className="container">No projects found.</div>
-        )}
+            <div className="container">No projects found.</div>
+          )}
       </div>
       {/* <Newsletter /> */}
     </Layout>

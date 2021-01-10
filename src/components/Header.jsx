@@ -1,10 +1,10 @@
-import { graphql, Link, useStaticQuery } from "gatsby"
-import React, { useState } from "react"
-import MenuMobile from "./MenuMobile"
-import { FaBars } from "react-icons/fa"
+import { graphql, Link, useStaticQuery } from "gatsby";
+import React, { useState } from "react";
+import MenuMobile from "./MenuMobile";
+import { FaBars } from "react-icons/fa";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const { site } = useStaticQuery(graphql`
     query {
@@ -17,7 +17,7 @@ const Header = () => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <div className="container pt-6 pb-12 md:pt-12">
@@ -25,9 +25,12 @@ const Header = () => {
         <Link to="/">
           {/* <img alt="Logo" className="w-24 md:w-32" src="logo.svg" /> */}
           {/* <img src="30theart_md.png" alt="Logo" className="w-12 md:w-12" style={{borderRadius:"100px"}}/> */}
-          <span className="logo__custom"
-          style={{fontWeight:"500", fontSize:"25px", color:"#1a202c"}}
-          >Lovesome</span>
+          <span
+            className="logo__custom"
+            style={{ fontWeight: "500", fontSize: "25px", color: "#1a202c" }}
+          >
+            For Better Days
+          </span>
         </Link>
 
         <button
@@ -57,7 +60,7 @@ const Header = () => {
         links={site.data.menu}
       />
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
