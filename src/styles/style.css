@@ -2,6 +2,7 @@
 
 body {
   @apply .bg-white .font-sans .antialiased;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 @tailwind components;
@@ -22,4 +23,10 @@ body {
   .container {
     @apply .px-8;
   }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Stylish&display=swap');
+
+.text-3xl {
+  font-family: 'Noto Sans KR';
 }

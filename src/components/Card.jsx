@@ -1,10 +1,10 @@
-import Img from "gatsby-image"
-import { graphql, Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import Img from "gatsby-image";
+import { graphql, Link } from "gatsby";
+import PropTypes from "prop-types";
+import React from "react";
 
 const Card = props => {
-  const { name, slug, summary, thumbnail } = props
+  const { name, slug, summary, thumbnail } = props;
 
   return (
     <div className="bg-white h-full shadow-sm rounded-md overflow-hidden group">
@@ -18,19 +18,19 @@ const Card = props => {
         </div>
       </Link>
     </div>
-  )
-}
+  );
+};
 
 Card.propTypes = {
   name: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
   summary: PropTypes.string.isRequired,
   thumbnail: PropTypes.shape({
-    localFile: PropTypes.object,
-  }),
-}
+    localFile: PropTypes.object
+  })
+};
 
-export default Card
+export default Card;
 
 export const query = graphql`
   fragment PortfolioCard on ContentfulPortfolio {
@@ -48,4 +48,4 @@ export const query = graphql`
     }
     summary
   }
-`
+`;
