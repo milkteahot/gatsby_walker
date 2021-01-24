@@ -1,12 +1,12 @@
-import { graphql } from "gatsby"
-import Img from "gatsby-image"
-import React from "react"
-import SiteMetadata from "../components/SiteMetadata"
-import Button from "../components/Button"
-import Cards from "../components/Cards"
+import { graphql } from "gatsby";
+import Img from "gatsby-image";
+import React from "react";
+import SiteMetadata from "../components/SiteMetadata";
+import Button from "../components/Button";
+import Cards from "../components/Cards";
 // import Carousel from "../components/Carousel"
 // import Newsletter from "../components/Newsletter"
-import Layout from "../layouts/Layout"
+import Layout from "../layouts/Layout";
 
 export default props => {
   const {
@@ -16,8 +16,9 @@ export default props => {
     related,
     summary,
     thumbnail,
-    url,
-  } = props.data.item
+    textcontent,
+    url
+  } = props.data.item;
 
   return (
     <Layout>
@@ -36,17 +37,16 @@ export default props => {
                   alt={name}
                 />
               )}
-              
-              {gallery && gallery.length > 1 && (
-                gallery.map((img,key) => (
-                <Img
-                  fluid={img.localFile.childImageSharp.fluid}
-                  alt={name}
-                  key={key}
-                />
-                ))
-                
-              )}
+
+              {gallery &&
+                gallery.length > 1 &&
+                gallery.map((img, key) => (
+                  <Img
+                    fluid={img.localFile.childImageSharp.fluid}
+                    alt={name}
+                    key={key}
+                  />
+                ))}
               {/* {gallery && gallery.length > 1 && <Carousel images={gallery} />} */}
             </div>
             <div className="w-full lg:w-1/3 lg:pl-8 xl:pl-12">
@@ -59,6 +59,11 @@ export default props => {
               {description && (
                 <div className="my-4 text-base text-gray-700 whitespace-pre-line">
                   {description.description}
+                </div>
+              )}
+              {textcontent && (
+                <div className="my-4 text-base text-gray-700 whitespace-pre-line">
+                  {textcontent}
                 </div>
               )}
               {url && (
@@ -82,8 +87,8 @@ export default props => {
       )}
       {/* <Newsletter /> */}
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query PortfolioItemQUery($slug: String!) {
@@ -107,6 +112,7 @@ export const query = graphql`
         ...PortfolioCard
       }
       summary
+      textcontent
       thumbnail {
         localFile {
           publicURL
@@ -115,4 +121,4 @@ export const query = graphql`
       url
     }
   }
-`
+`;
