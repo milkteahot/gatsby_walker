@@ -2,7 +2,7 @@
 
 body {
   @apply .bg-white .font-sans .antialiased;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif
 }
 
 @tailwind components;
@@ -24,8 +24,6 @@ body {
     @apply .px-8;
   }
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Stylish&display=swap');
 
 .text-3xl {
   font-family: 'Noto Sans KR';
